@@ -9,7 +9,11 @@ function spawnHeart() {
 
     const heart = document.createElement("div");
     heart.classList.add("heart");
-    heart.textContent = "❤️";
+    heart.textContent = "👶🏻";
+    
+    // Aumentamos el tamaño del corazón
+    heart.style.fontSize = "40px"; // Puedes ajustar este valor según lo necesites
+    
     heart.style.left = `${Math.random() * 90}vw`;
     heart.style.top = `-50px`;
 
@@ -36,7 +40,7 @@ function spawnHeart() {
             document.body.appendChild(countdownMessage);
 
             const countdownInterval = setInterval(() => {
-                countdownMessage.textContent = `Felicidades Srta. Valeska! ❤️🎉\n Pasando al siguiente nivel en ${countdown} segundos...`;
+                countdownMessage.textContent = `Felicidades Madrecita! ❤️🎉\n Pasando al siguiente nivel en ${countdown} segundos...`;
                 countdown--;
                 
                 if (countdown < 0) {
@@ -55,6 +59,8 @@ function spawnHeart() {
 }
 
 heartInterval = setInterval(spawnHeart, 1000);
+
+// El resto del código se mantiene igual...
 
 // Partículas en el fondo
 const canvas = document.getElementById("particles");
@@ -84,7 +90,7 @@ function drawParticles() {
     for (let particle of particles) {
         ctx.fillStyle = `rgba(255, 0, 100, ${particle.opacity})`;
         ctx.font = `${particle.size}px Arial`;
-        ctx.fillText("❤️", particle.x, particle.y);
+        ctx.fillText("👶", particle.x, particle.y);
         particle.y -= particle.speedY;
 
         if (particle.y < -10) {
